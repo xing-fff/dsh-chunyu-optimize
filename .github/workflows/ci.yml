@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 语法检查
+        run: |
+          node --check lib/index.js
+          node --check client.js
+      - name: package.json 可解析
+        run: node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+      - name: cordis.patch.yml 存在
+        run: test -f cordis.patch.yml

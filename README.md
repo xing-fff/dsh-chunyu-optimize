@@ -2,6 +2,8 @@
 
 本地部署优化：按工作区 / 时段自动切模型，两个本地预设随模型自动匹配，会话续接，SurfCore 人设与记忆分级。
 
+MIT License · 欢迎接力维护，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 安装
 
 本机（开发态）：源码目录建 junction 到 profile 的 `node_modules`，并在 profile `package.json` 的 `dependencies` 与 `bundles` 里各加一行，重启 DSH。

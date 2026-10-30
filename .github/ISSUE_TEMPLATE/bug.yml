@@ -1,0 +1,23 @@
+---
+name: Bug 反馈
+about: 插件没按预期工作
+title: "[bug] "
+labels: bug
+---
+
+**现象**
+
+
+**复现步骤**
+1.
+2.
+
+**环境**
+- DSH 版本：
+- 系统 / Node：
+- 本地模型（如用到）：provider + model，如 `ollama-local / qwen3.5-cn:9b`
+
+**设置页截图或 ~/.dsh/chunyu-optimize/config.json（隐去密钥）**
+
+
+**日志**（DSH 控制台里 `chunyu-optimize` 相关行）

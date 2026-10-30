@@ -1,0 +1,38 @@
+{
+  "name": "dsh-chunyu-optimize",
+  "version": "0.1.0",
+  "description": "蠢鱼优化：本地部署优化（按时段/工作区切换模型、预设自动匹配、会话续接、SurfCore 记忆与人设分级）",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "local-llm",
+    "ollama",
+    "model-routing"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": ["@deepseek-ai/dsh-client-locale"],
+      "platform": "web"
+    }
+  }
+}

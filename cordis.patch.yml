@@ -1,0 +1,4 @@
+# 蠢鱼优化：bundle 层，安装到 profile 后自动应用
+- insert:
+    - id: chunyu-optimize
+      name: dsh-chunyu-optimize

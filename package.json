@@ -1,14 +1,17 @@
 {
   "name": "dsh-chunyu-optimize",
   "version": "0.1.0",
-  "description": "蠢鱼优化：本地部署优化（按时段/工作区切换模型、预设自动匹配、会话续接、SurfCore 记忆与人设分级）",
+  "description": "蠢鱼优化：DSH 本地部署优化插件（按工作区 / 时段自动切模型、预设匹配、会话续接、SurfCore 人设与记忆分级）",
   "keywords": [
+    "dsh-plugin",
     "dsh",
     "deepseek-harness",
     "plugin",
     "local-llm",
     "ollama",
-    "model-routing"
+    "model-routing",
+    "agent-preset",
+    "surfcore"
   ],
   "type": "module",
   "main": "lib/index.js",
@@ -23,9 +26,23 @@
     "client.js",
     "cordis.patch.yml",
     "README.md",
+    "CONTRIBUTING.md",
     "LICENSE"
   ],
   "license": "MIT",
+  "author": "xing-fff",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xing-fff/dsh-chunyu-optimize.git"
+  },
+  "homepage": "https://github.com/xing-fff/dsh-chunyu-optimize#readme",
+  "bugs": {
+    "url": "https://github.com/xing-fff/dsh-chunyu-optimize/issues"
+  },
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.1-rc.1 <0.3.0"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -33,6 +50,22 @@
     "client": {
       "inject": ["@deepseek-ai/dsh-client-locale"],
       "platform": "web"
+    },
+    "compatibility": {
+      "dsh": "0.2.1-rc.3",
+      "dshReleases": {
+        "0.2.1-rc.3": "compatible",
+        "0.2.1-rc.4": "compatible",
+        "0.2.1-rc.5": "compatible",
+        "0.2.2-alpha.2": "compatible"
+      },
+      "profiles": ["web"],
+      "permissions": {
+        "files": "write",
+        "network": "external-http",
+        "commands": "none",
+        "credentials": "none"
+      }
     }
   }
 }
